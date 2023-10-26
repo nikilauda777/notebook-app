@@ -9,9 +9,9 @@ import {Note} from './model/note.model';
 export class AppComponent {
   pageTitle = 'Заметки';
   notes: Note[] = [
-    {title: 'Заметка 1', content: 'Content of Note 1'},
-    {title: 'Заметка 2', content: 'Content of Note 2'},
-    {title: 'Заметка 3', content: 'Content of Note 3'},
+    {id: 1, title: 'Заметка 1', content: 'Content of Note 1'},
+    {id: 2, title: 'Заметка 2', content: 'Content of Note 2'},
+    {id: 3, title: 'Заметка 3', content: 'Content of Note 3'},
 
   ];
   selectedNote: Note;
@@ -26,8 +26,9 @@ export class AppComponent {
   }
 
   onAddNote(newNote: { title: string, content: string }) {
+    const id = this.notes.length + 1;
     const { title, content } = newNote;
-    const note: Note = {  title, content };
+    const note: Note = { id, title, content };
     this.notes.push(note);
     this.showAddNoteForm = false;
   }
