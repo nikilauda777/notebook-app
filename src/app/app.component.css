@@ -22,6 +22,13 @@ app-note-list {
   border-right: 1px solid #ccc;
 }
 
+app-note-details {
+  background-color: #B2EBF2;
+  max-width: 100%;
+  flex: 1;
+  overflow: auto;
+}
+
 .add-button {
   background-color: #00BCD4;
   color: #b7e79c;

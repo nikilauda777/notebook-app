@@ -5,16 +5,20 @@ ul {
 
 li {
   cursor: pointer;
-  padding: 15px;
+  padding: 35px;
   border-bottom: 1px solid #ddd;
   font-size: 18px;
   background-color: #BDBDBD;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-bottom: 20px;
 }
 
 li:hover {
   background-color: #B3E5FC;
 }
-
+.note-list {
+  height: 100vh;
+  max-height: 100%;
+  overflow-y: auto;
+}
 
