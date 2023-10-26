@@ -1,1 +1,7 @@
-<p>note-list works!</p>
+<div>
+  <ul>
+    <li *ngFor="let note of notes" (click)="onNoteSelect(note)">
+      {{ note.title }}
+    </li>
+  </ul>
+</div>
