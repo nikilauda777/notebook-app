@@ -20,6 +20,10 @@ export class AppComponent {
     this.selectedNote = selectedNote;
   }
 
+  toggleAddNoteForm() {
+    this.showAddNoteForm = !this.showAddNoteForm;
+  }
+
   onAddNote(newNote: { title: string, content: string }) {
     const { title, content } = newNote;
     const note: Note = {  title, content };

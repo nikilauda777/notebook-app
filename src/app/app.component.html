@@ -1,6 +1,12 @@
-<app-header>
-</app-header>
-<button (click)="showAddNoteForm = true">Add Note</button>
+<app-header></app-header>
+<button (click)="toggleAddNoteForm()" class="add-button">
+  <svg *ngIf="!showAddNoteForm" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+    <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 0 1 0 2H9v6a1 1 0 0 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+  </svg>
+  <svg *ngIf="showAddNoteForm" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+    <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 0 1 0 2H1a1 1 0 0 1-1-1z"/>
+  </svg>
+</button>
 <app-add-note *ngIf="showAddNoteForm" (addNote)="onAddNote($event)"></app-add-note>
 <div class="content">
   <app-note-list [notes]="notes" (noteSelected)="onNoteSelected($event)"></app-note-list>
