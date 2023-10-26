@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-note',
@@ -12,12 +11,14 @@ export class AddNoteComponent {
   newNoteContent = '';
 
   onSubmit() {
-    const newNote = {
-      title: this.newNoteTitle,
-      content: this.newNoteContent,
-    };
-    this.addNote.emit(newNote);
-    this.newNoteTitle = '';
-    this.newNoteContent = '';
+    if (this.newNoteTitle && this.newNoteContent) {
+      const newNote = {
+        title: this.newNoteTitle,
+        content: this.newNoteContent,
+      };
+      this.addNote.emit(newNote);
+      this.newNoteTitle = '';
+      this.newNoteContent = '';
+    }
   }
 }
