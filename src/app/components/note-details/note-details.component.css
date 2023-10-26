@@ -1,0 +1,14 @@
+.note-details {
+  flex: 1;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}

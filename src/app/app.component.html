@@ -1,5 +1,6 @@
 <app-header></app-header>
 <div class="content">
   <app-note-list [notes]="notes" (noteSelected)="onNoteSelected($event)"></app-note-list>
-  <router-outlet></router-outlet>
+  <app-note-details [selectedNote]="selectedNote"></app-note-details>
 </div>
+
