@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NoteListComponent } from './components/note-list/note-list.component';
 import { NoteDetailsComponent } from './components/note-details/note-details.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NoteListComponent,
-    NoteDetailsComponent
+    NoteDetailsComponent,
+    AddNoteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

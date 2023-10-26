@@ -1,6 +1,8 @@
-<app-header></app-header>
+<app-header>
+</app-header>
+<button (click)="showAddNoteForm = true">Add Note</button>
+<app-add-note *ngIf="showAddNoteForm" (addNote)="onAddNote($event)"></app-add-note>
 <div class="content">
   <app-note-list [notes]="notes" (noteSelected)="onNoteSelected($event)"></app-note-list>
   <app-note-details [selectedNote]="selectedNote"></app-note-details>
 </div>
-

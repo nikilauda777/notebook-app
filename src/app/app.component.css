@@ -11,3 +11,16 @@ app-note-list {
   background-color: #bb1616;
   padding: 10px;
 }
+
+button {
+  background-color: #bb1616;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 10%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff5959;
+}

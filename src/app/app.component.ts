@@ -14,8 +14,16 @@ export class AppComponent {
 
   ];
   selectedNote: Note;
+  showAddNoteForm = false;
 
   onNoteSelected(selectedNote: Note) {
     this.selectedNote = selectedNote;
+  }
+
+  onAddNote(newNote: { title: string, content: string }) {
+    const { title, content } = newNote;
+    const note: Note = {  title, content };
+    this.notes.push(note);
+    this.showAddNoteForm = false;
   }
 }
