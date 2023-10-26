@@ -7,6 +7,7 @@ import {Note} from './model/note.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pageTitle = 'Заметки';
   notes: Note[] = [
     {title: 'Заметка 1', content: 'Content of Note 1'},
     {title: 'Заметка 2', content: 'Content of Note 2'},

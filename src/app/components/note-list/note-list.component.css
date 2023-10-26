@@ -8,13 +8,13 @@ li {
   padding: 15px;
   border-bottom: 1px solid #ddd;
   font-size: 18px;
-  background-color: #f8f6f6;
+  background-color: #BDBDBD;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 li:hover {
-  background-color: #ffc0cb;
+  background-color: #B3E5FC;
 }
 
 

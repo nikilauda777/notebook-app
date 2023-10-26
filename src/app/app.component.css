@@ -1,3 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0288D1;
+  color: #fff;
+  padding: 10px;
+}
+
 .content {
   display: flex;
   margin: 0;
@@ -8,12 +17,13 @@
 
 app-note-list {
   width: 25%;
-  background-color: #bb1616;
+  background-color: #ffffff;
   padding: 10px;
+  border-right: 1px solid #ccc;
 }
 
 .add-button {
-  background-color: #adadad;
+  background-color: #00BCD4;
   color: #b7e79c;
   border: none;
   padding: 10px;
@@ -27,7 +37,7 @@ app-note-list {
 .add-button svg {
   width: 20px;
   height: 20px;
-  fill: rgba(99, 148, 128, 0.94);
+  fill: rgb(255, 255, 255);
 }
 
 .add-button:hover {
