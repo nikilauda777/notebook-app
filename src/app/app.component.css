@@ -22,7 +22,7 @@ app-note-list {
   border-right: 1px solid #ccc;
 }
 
-app-note-details {
+.note-details {
   background-color: #ecfdff;
   max-width: 100%;
   flex: 1;
