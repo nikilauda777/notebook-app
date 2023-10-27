@@ -1,21 +1,22 @@
 import {Component} from '@angular/core';
 import {Note} from './model/note.model';
+import {NoteService} from './services/note.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   pageTitle = 'Заметки';
-  notes: Note[] = [
-    {id: 1, title: 'Заметка 1', content: 'Content of Note 1'},
-    {id: 2, title: 'Заметка 2', content: 'Content of Note 2'},
-    {id: 3, title: 'Заметка 3', content: 'Content of Note 3'},
-
-  ];
+  notes: Note[] = [];
   selectedNote: Note;
   showAddNoteForm = false;
+
+  constructor(private noteService: NoteService) {
+    this.notes = this.noteService.getNotes();
+  }
 
   onNoteSelected(selectedNote: Note) {
     this.selectedNote = selectedNote;
@@ -27,9 +28,9 @@ export class AppComponent {
 
   onAddNote(newNote: { title: string, content: string }) {
     const id = this.notes.length + 1;
-    const { title, content } = newNote;
-    const note: Note = { id, title, content };
-    this.notes.push(note);
+    const {title, content} = newNote;
+    const note: Note = {id, title, content};
+    this.noteService.addNote(note);
     this.showAddNoteForm = false;
   }
 }
