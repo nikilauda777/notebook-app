@@ -8,17 +8,24 @@ import {NoteService} from '../../services/note.service';
   templateUrl: './note-details.component.html',
   styleUrls: ['./note-details.component.css'],
 })
-export class NoteDetailsComponent{
-  @Input() selectedNote: Note;
+export class NoteDetailsComponent implements OnInit {
+  selectedNote: Note;
 
-  // constructor(
-  //   private route: ActivatedRoute,
-  //   private noteService: NoteService
-  // ) {
-  // }
-  //
-  // ngOnInit(): void {
-  //   const id = +this.route.snapshot.params.id;
-  //   this.selectedNote = this.noteService.getNoteById(id);
-  // }
+  constructor(
+    private route: ActivatedRoute,
+    private noteService: NoteService
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      const id = +params.id;
+      if (id) {
+        this.selectedNote = this.noteService.getNoteById(id);
+      } else {
+        this.noteService.getSelectedNote().subscribe((note) => {
+          this.selectedNote = note;
+        });
+      }
+    });
+  }
 }

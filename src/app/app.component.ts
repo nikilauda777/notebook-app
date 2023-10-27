@@ -11,15 +11,10 @@ import {NoteService} from './services/note.service';
 export class AppComponent {
   pageTitle = 'Заметки';
   notes: Note[] = [];
-  selectedNote: Note;
   showAddNoteForm = false;
 
   constructor(private noteService: NoteService) {
     this.notes = this.noteService.getNotes();
-  }
-
-  onNoteSelected(selectedNote: Note) {
-    this.selectedNote = selectedNote;
   }
 
   toggleAddNoteForm() {
@@ -28,8 +23,8 @@ export class AppComponent {
 
   onAddNote(newNote: { title: string, content: string }) {
     const id = this.notes.length + 1;
-    const {title, content} = newNote;
-    const note: Note = {id, title, content};
+    const { title, content } = newNote;
+    const note: Note = { id, title, content };
     this.noteService.addNote(note);
     this.showAddNoteForm = false;
   }

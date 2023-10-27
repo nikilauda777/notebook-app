@@ -1,6 +1,7 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Note} from '../../model/note.model';
 import {Router} from '@angular/router';
+import {NoteService} from '../../services/note.service';
 
 
 @Component({
@@ -10,15 +11,12 @@ import {Router} from '@angular/router';
 })
 export class NoteListComponent {
   @Input() notes: Note[];
-  @Output() noteSelected = new EventEmitter<Note>();
-  selectedNote: Note;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private noteService: NoteService) {
   }
 
   onNoteSelect(note: Note) {
-    this.selectedNote = note;
-    this.noteSelected.emit(note);
+    this.noteService.setSelectedNote(note);
     this.router.navigate(['/note', note.id]);
   }
 }

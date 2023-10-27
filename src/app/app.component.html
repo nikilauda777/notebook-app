@@ -11,6 +11,6 @@
 </div>
 <app-add-note *ngIf="showAddNoteForm" (addNote)="onAddNote($event)"></app-add-note>
 <div class="content">
-  <app-note-list [notes]="notes" (noteSelected)="onNoteSelected($event)"></app-note-list>
-  <app-note-details [selectedNote]="selectedNote"></app-note-details>
+  <app-note-list [notes]="notes"></app-note-list>
+  <router-outlet></router-outlet>
 </div>
